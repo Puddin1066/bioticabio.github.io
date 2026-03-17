@@ -1,0 +1,19 @@
+title: Biotica Bio
+description: Evidence-led target assessment for startups and investors
+theme: just-the-docs
+url: https://bioticabio.com
+
+search_enabled: true
+heading_anchors: true
+
+# Optional: set when you have assets
+# favicon_ico: "/assets/images/favicon.ico"
+# logo: "/assets/images/logo.png"
+
+aux_links:
+  Contact: /contact/
+
+footer_content: "Copyright &copy; 2025 Biotica Bio. Evidence-led target assessment for startups and investors. bioticabio.com"
+
+# Nav: pages use nav_order in front matter; order below matches intended sidebar order
+# Home (index) -> What we do -> For startups -> For investors -> Example (parent) -> BRCA2 report -> How it's built -> The platform -> About -> Contact
