@@ -6,6 +6,9 @@ url: https://bioticabio.com
 search_enabled: true
 heading_anchors: true
 
+# Modern look
+color_scheme: dark
+
 # Optional: set when you have assets
 # favicon_ico: "/assets/images/favicon.ico"
 # logo: "/assets/images/logo.png"
@@ -13,7 +16,19 @@ heading_anchors: true
 aux_links:
   Contact: /contact/
 
-footer_content: "Copyright &copy; 2025 Biotica Bio. Evidence-led target assessment for startups and investors. bioticabio.com"
+# Callouts (custom titles via first line of content)
+callouts:
+  note:
+    title: Note
+    color: purple
+  info:
+    title: Info
+    color: blue
+  warning:
+    title: Warning
+    color: red
+
+# Footer: see _includes/footer_custom.html
 
 # Nav: pages use nav_order in front matter; order below matches intended sidebar order
 # Home (index) -> What we do -> For startups -> For investors -> Example (parent) -> BRCA2 report -> How it's built -> The platform -> About -> Contact

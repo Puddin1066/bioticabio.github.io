@@ -1,0 +1,15 @@
+// Primary CTA link styled as a button (works in light and dark schemes)
+a.cta-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  background-color: #2563eb;
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+a.cta-button:hover {
+  background-color: #1d4ed8;
+  color: #fff !important;
+}
