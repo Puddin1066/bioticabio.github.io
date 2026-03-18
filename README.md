@@ -15,16 +15,39 @@ Marketing and documentation site for [Biotica Bio](https://bioticabio.com): evid
 
 To host this site from a `docs` (or `bioticabio-docs`) directory in an existing repo, see [Hosting your docs from an existing project repo](https://github.com/just-the-docs/just-the-docs-template#hosting-your-docs-from-an-existing-project-repo) in the Just the Docs template README. Copy this folder into `docs`, add a workflow that sets `working-directory: docs` and uploads `docs/_site/`, and trigger on changes under `docs/**`.
 
-## Local preview
+## Local setup and preview
 
-From this directory:
+1. **Install dependencies** (requires Ruby ≥ 2.7; Jekyll 4.x needs it):
 
-```bash
-bundle install
-bundle exec jekyll serve
-```
+   ```bash
+   bundle install
+   ```
 
-Open [http://localhost:4000](http://localhost:4000).
+   If your system Ruby is older (e.g. macOS `/usr/bin/ruby` 2.6), use Homebrew’s Ruby:
+
+   ```bash
+   /opt/homebrew/opt/ruby/bin/bundle install
+   ```
+
+2. **Run the site locally:**
+
+   ```bash
+   bundle exec jekyll serve
+   ```
+
+   With Homebrew Ruby:
+
+   ```bash
+   /opt/homebrew/opt/ruby/bin/bundle exec jekyll serve
+   ```
+
+   If port 4000 is in use, pick another port:
+
+   ```bash
+   bundle exec jekyll serve --port 4002
+   ```
+
+3. Open [http://localhost:4000](http://localhost:4000) (or the port you chose).
 
 ## Contents
 
