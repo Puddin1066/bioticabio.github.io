@@ -24,17 +24,11 @@ Follow these in order. Steps 1–4 are one-time setup; step 5 is optional (custo
 
 ---
 
-## 3. Enable GitHub Pages from Actions (required)
+## 3. Enable GitHub Pages from Actions
 
-The workflow will fail with "Get Pages site failed" until this is done:
-
-1. In the repo, go to **Settings** (tab at top).
-2. In the left sidebar, click **Pages** (under "Code and automation").
-3. Under **Build and deployment**, find **Source**.
-4. Open the **Source** dropdown and select **GitHub Actions** (not "Deploy from a branch").
-5. Save. No branch or folder choice is needed when using Actions.
-
-Then go to the **Actions** tab and **Re-run all jobs** on the failed workflow (or push a small change). The site will deploy after the run succeeds.
+- In the new repo: **Settings** → **Pages**.
+- Under **Build and deployment**, **Source**: choose **GitHub Actions** (not “Deploy from a branch”).
+- Save. The first push to `main` will trigger the workflow; wait for the **Deploy Jekyll site to Pages** run to finish (Actions tab).
 
 ---
 

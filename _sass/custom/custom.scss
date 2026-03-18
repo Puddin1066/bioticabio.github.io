@@ -1,15 +1,137 @@
-// Primary CTA link styled as a button (works in light and dark schemes)
-a.cta-button {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  background-color: #2563eb;
-  color: #fff !important;
-  text-decoration: none;
-  font-weight: 500;
-  transition: background-color 0.2s ease;
+// Typography
+.main-content {
+  line-height: 1.55;
+
+  h1, h2, h3 {
+    font-weight: 600;
+  }
+
+  h1, h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    margin-top: 1.25rem;
+  }
+
+  h3 {
+    margin-top: 1rem;
+    margin-bottom: 0.4rem;
+  }
 }
-a.cta-button:hover {
-  background-color: #1d4ed8;
-  color: #fff !important;
+
+// Nav footer tagline (sidebar)
+.nav-footer-tagline {
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
+  opacity: 0.9;
+}
+
+// Site tagline (header_custom)
+.site-tagline {
+  font-size: 0.875rem;
+  color: var(--body-text-color);
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+// Callouts: clearer left border and padding
+.main-content .note,
+.main-content .warning {
+  padding: 0.75rem 1rem;
+  border-left: 4px solid;
+  margin: 1rem 0;
+}
+
+.main-content .note {
+  border-left-color: var(--blue-200, #264caf);
+  background: rgba(38, 76, 175, 0.06);
+}
+
+.main-content .warning {
+  border-left-color: var(--red-200, #e94c4c);
+  background: rgba(233, 76, 76, 0.06);
+}
+
+// Footer: smaller, ordered (wrapper class used in footer_custom.html)
+.site-footer {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  margin-top: 1.5rem;
+}
+
+.site-footer p {
+  margin-bottom: 0.5rem;
+}
+
+.site-footer small {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+// Links: clear hover/focus
+.main-content a {
+  text-decoration: none;
+}
+
+.main-content a:hover,
+.main-content a:focus {
+  text-decoration: underline;
+}
+
+// Tables: borders and padding for reports
+.main-content table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.main-content table th,
+.main-content table td {
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+.main-content table th {
+  font-weight: 600;
+  background: var(--grey-lt-000, #f5f6fa);
+}
+
+.main-content table tbody tr:hover td {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+// Lead paragraph (use {: .lead } in Markdown)
+.main-content .lead {
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+// Horizontal rules in long content
+.main-content hr {
+  border: 0;
+  border-top: 1px solid var(--border-color);
+  margin: 1.5rem 0;
+}
+
+// List spacing on list-heavy pages
+.main-content ul li,
+.main-content ol li {
+  margin-bottom: 0.35rem;
+}
+
+// Report metadata block (e.g. BRCA2 key-value block)
+.main-content .report-meta {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  padding: 1rem 1.25rem;
+  background: var(--grey-lt-000, #f5f6fa);
+  border-radius: 4px;
+  margin: 1rem 0;
 }

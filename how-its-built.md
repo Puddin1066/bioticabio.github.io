@@ -1,5 +1,6 @@
 ---
 title: How it's built
+layout: default
 nav_order: 7
 description: One query to evidence to narrative — Biotica Bio method
 ---
@@ -7,6 +8,7 @@ description: One query to evidence to narrative — Biotica Bio method
 # How it's built
 
 Biotica Bio assessments are **reproducible by design**: one GraphQL query against the Open Targets Platform returns structured evidence (target, pathways, disease associations, druggability, safety, DepMap, literature, and more). We turn that data into a narrative report—so you get both the evidence and the interpretation.
+{: .lead }
 
 ## Flow
 
@@ -18,7 +20,7 @@ Same query, same data—you can **re-run as evidence updates** or have your own 
 
 ## The query
 
-The BRCA2 report used the following GraphQL query (target ID `ENSG00000139618`). You can run it in the [Open Targets GraphQL Playground](https://api.platform.opentargets.org/api/v4/graphql) or in your own environment.
+The BRCA2 report used the following GraphQL query (target ID `ENSG00000139618`). You can run it in the [Open Targets GraphQL Playground](https://api.platform.opentargets.org/api/v4/graphql) or in your own environment. For the Platform's entities and how they are queried (target, disease, drug, variant, study), see [The platform → Entities and query space]({% link the-platform.md %}#entities-and-query-space).
 
 ```graphql
 # Comprehensive oncology target assessment
@@ -63,7 +65,7 @@ query OncologyTargetAssessment {
 
 Example target IDs: BRCA1 `ENSG00000012048`, EGFR `ENSG00000146648`, KRAS `ENSG00000133703`, TP53 `ENSG00000141510`, PIK3CA `ENSG00000121879`.
 
-For the full query file (with comments), see the [oncology target assessment query](https://github.com/opentargets/platform-api/blob/main/docs/oncology-target-assessment.graphql) in the Open Targets Platform API repo.
+For the full query file (with comments), see `docs/oncology-target-assessment.graphql` in the project repository (the same repo that contains this docs site).
 
 ## Reproducibility
 

@@ -1,5 +1,6 @@
 ---
 title: BRCA2 executive report
+layout: default
 parent: Example
 nav_order: 1
 description: Full BRCA2 oncology target assessment — Biotica Bio example deliverable
@@ -8,6 +9,7 @@ description: Full BRCA2 oncology target assessment — Biotica Bio example deliv
 # BRCA2: Executive Oncology Target Assessment
 
 This is an example Biotica Bio deliverable: a comprehensive oncology target assessment for **BRCA2**, generated from the Open Targets Platform API and interpreted for strategy and due diligence. The data below is derived from the Platform’s aggregated sources; the narrative and strategic synthesis are by Biotica Bio.
+{: .lead }
 
 {: .warning }
 This assessment is for strategic and due-diligence use only; it does not constitute regulatory, medical, or investment advice.
@@ -23,6 +25,7 @@ For how this report was produced (one GraphQL query → data → narrative), see
 **Locus:** Chr 13 (32.3–32.4 Mb)  
 **Report source:** Open Targets Platform API (oncology comprehensive query). All data in this report is derived from the Platform’s aggregated sources; see §10 and inline citations.  
 **Audience:** Pharma / biotech strategy and R&D leadership
+{: .report-meta }
 
 ---
 
@@ -144,7 +147,42 @@ Platform prioritisation (values roughly in [−1, 1]; 0 = neutral):
 *Data sources: Expression Atlas, Human Protein Atlas (expression); Europe PMC / PubMed (literature counts and metadata).*
 
 - **Expression:** 110 tissue/biosample entries (RNA/protein) — broad expression with potential for **tissue‑specific** or **context‑dependent** strategies *[Expression Atlas, Human Protein Atlas]*.  
-- **Literature:** **34,120** publications in the platform *[Europe PMC]* — one of the most heavily cited targets in the dataset.
+- **Literature:** **34,120** publications in the platform *[Europe PMC]* — one of the most heavily cited targets in the dataset. **Core papers (evidence-backed and hallmark literature):** 32 unique PMIDs from evidence literature and cancer hallmarks/attributes.
+
+| PMID | Link |
+|------|------|
+| 14660434 | https://pubmed.ncbi.nlm.nih.gov/14660434/ |
+| 14681210 | https://pubmed.ncbi.nlm.nih.gov/14681210/ |
+| 18563556 | https://pubmed.ncbi.nlm.nih.gov/18563556/ |
+| 20576095 | https://pubmed.ncbi.nlm.nih.gov/20576095/ |
+| 20719876 | https://pubmed.ncbi.nlm.nih.gov/20719876/ |
+| 20735817 | https://pubmed.ncbi.nlm.nih.gov/20735817/ |
+| 21958427 | https://pubmed.ncbi.nlm.nih.gov/21958427/ |
+| 23284877 | https://pubmed.ncbi.nlm.nih.gov/23284877/ |
+| 23704984 | https://pubmed.ncbi.nlm.nih.gov/23704984/ |
+| 24489863 | https://pubmed.ncbi.nlm.nih.gov/24489863/ |
+| 24598993 | https://pubmed.ncbi.nlm.nih.gov/24598993/ |
+| 24902638 | https://pubmed.ncbi.nlm.nih.gov/24902638/ |
+| 25348552 | https://pubmed.ncbi.nlm.nih.gov/25348552/ |
+| 25690937 | https://pubmed.ncbi.nlm.nih.gov/25690937/ |
+| 25833843 | https://pubmed.ncbi.nlm.nih.gov/25833843/ |
+| 26976601 | https://pubmed.ncbi.nlm.nih.gov/26976601/ |
+| 27727438 | https://pubmed.ncbi.nlm.nih.gov/27727438/ |
+| 28743957 | https://pubmed.ncbi.nlm.nih.gov/28743957/ |
+| 28831036 | https://pubmed.ncbi.nlm.nih.gov/28831036/ |
+| 31090900 | https://pubmed.ncbi.nlm.nih.gov/31090900/ |
+| 31182087 | https://pubmed.ncbi.nlm.nih.gov/31182087/ |
+| 31273933 | https://pubmed.ncbi.nlm.nih.gov/31273933/ |
+| 31549213 | https://pubmed.ncbi.nlm.nih.gov/31549213/ |
+| 31877165 | https://pubmed.ncbi.nlm.nih.gov/31877165/ |
+| 32980867 | https://pubmed.ncbi.nlm.nih.gov/32980867/ |
+| 34375979 | https://pubmed.ncbi.nlm.nih.gov/34375979/ |
+| 34662886 | https://pubmed.ncbi.nlm.nih.gov/34662886/ |
+| 36344544 | https://pubmed.ncbi.nlm.nih.gov/36344544/ |
+| 36976649 | https://pubmed.ncbi.nlm.nih.gov/36976649/ |
+| 37316882 | https://pubmed.ncbi.nlm.nih.gov/37316882/ |
+| 37934606 | https://pubmed.ncbi.nlm.nih.gov/37934606/ |
+| 39235515 | https://pubmed.ncbi.nlm.nih.gov/39235515/ |
 
 **Strategic point:** Rich literature supports **regulatory and payer narratives** and de‑risks **mechanism‑of‑action** and **biomarker** discussions.
 
@@ -173,9 +211,10 @@ Platform prioritisation (values roughly in [−1, 1]; 0 = neutral):
 ## 10. Data provenance and methodology
 
 - **API source:** Open Targets Platform GraphQL API (`https://api.platform.opentargets.org/api/v4/graphql`).  
-- **Query:** Comprehensive oncology target assessment (target, pathways, GO, hallmarks, tractability, known drugs, associated diseases, evidence, DepMap, prioritisation, safety, expression, genetic constraint, literature).  
+- **Query:** Comprehensive oncology target assessment (target, pathways, GO, hallmarks, tractability, known drugs, associated diseases, evidence, DepMap, prioritisation, safety, expression, genetic constraint, literature, **interactions**; plus fixed disease set for **competitors/comparables**: breast, ovarian, prostate cancer, neoplasm).  
 - **Target:** BRCA2 (ENSG00000139618).  
-- **Report generated:** From `oncology-result.json`; interpretation and strategic narrative added for executive use.
+- **Report generated:** From `oncology-result.json`; interpretation and strategic narrative added for executive use.  
+- **Citations:** All PMIDs in this report are from the Platform’s literature data (COSMIC cancer hallmarks/attributes and `literatureOcurrences`); links point to PubMed.
 
 ### Data sources by section
 
@@ -188,10 +227,106 @@ Platform prioritisation (values roughly in [−1, 1]; 0 = neutral):
 | §6 Prioritisation | Open Targets prioritisation (DepMap, gnomAD, Cancer Gene Census, IMPC, expression, tissue data) |
 | §7 Cellular dependency | DepMap (Cancer Dependency Map) |
 | §8 Expression & literature | Expression Atlas, Human Protein Atlas; Europe PMC |
+| §11 Competitors and comparables | Platform disease(efoId).knownDrugs, associatedTargets; target.interactions |
+| §12 Commercial opportunity map | Curated (playbooks / manual) |
 
 All data is accessed via the Open Targets Platform; upstream sources are maintained and documented by the Open Targets project and respective databases.
 
 For reproducibility or updates, re-run the oncology query for `ENSG00000139618` (or other targets) and regenerate this report from the new JSON.
+
+---
+
+## 11. Competitors and comparables
+
+*Source: Open Targets Platform `disease(efoId).knownDrugs`, `disease(efoId).associatedTargets`, and `target.interactions`. Indication set: breast carcinoma (EFO_0000305), ovarian carcinoma (EFO_0000405), prostate cancer (EFO_0000615), neoplasm (EFO_0000616).*
+
+### Competitor drugs (by indication)
+
+Drugs indicated for the same oncology indications (BRCA2 is not directly targeted; these are the competitive set in indication space).
+
+| Drug | Target | Phase | Mechanism | Indication |
+|------|--------|------|------------|------------|
+| Enzalutamide | AR | IV | Androgen receptor antagonist | Neoplasm |
+| Exemestane | CYP19A1 | IV | Cytochrome P450 19A1 inhibitor | Breast carcinoma |
+| Fulvestrant | ESR1 | IV | Estrogen receptor degrader | Breast carcinoma |
+| Letrozole | CYP19A1 | IV | Cytochrome P450 19A1 inhibitor | Breast carcinoma |
+| Trastuzumab | ERBB2 | IV | Receptor protein-tyrosine kinase erbB-2 inhibitor | Breast carcinoma |
+| Lapatinib | ERBB2 | IV | Receptor protein-tyrosine kinase erbB-2 inhibitor | Breast carcinoma |
+| Palbociclib | CDK6 | IV | CDK6/cyclin D1 inhibitor | Breast carcinoma |
+| Everolimus | FRBP1A | IV | FK506-binding protein 1A inhibitor | Breast carcinoma |
+| Bevacizumab | VEGFA | IV | VEGF A inhibitor | Breast carcinoma |
+| Pertuzumab | ERBB2 | IV | Receptor protein-tyrosine kinase erbB-2 inhibitor | Breast carcinoma |
+| Gemcitabine | TK1 | IV | DNA polymerase inhibitor | Breast carcinoma |
+| Capecitabine | TYMS | IV | Thymidylate synthase inhibitor | Breast carcinoma |
+| Rituximab | MS4A1 | IV | B-lymphocyte antigen CD20 binding agent | Neoplasm |
+| Olaparib * | PARP1 | IV | Poly(ADP-ribose) polymerase inhibitor | (PARP; indirect in BRCA space) |
+| *Plus others* | — | — | *Deduped from disease\*.knownDrugs; full list in JSON.* | — |
+
+*PARP inhibitors (e.g. Olaparib, Niraparib, Talazoparib) are indicated in BRCA-mutant cancers but target PARP, not BRCA2; they appear in the API for relevant indications.*
+
+### Comparable targets (by indication)
+
+Other targets strongly associated with the same indications (excluding BRCA2). Source: `disease(efoId).associatedTargets`.
+
+| Target | Name | Score | Indication |
+|--------|------|-------|------------|
+| BRCA1 | BRCA1 DNA repair associated | 0.88 | Breast carcinoma |
+| PALB2 | Partner and localizer of BRCA2 | 0.87 | Breast carcinoma |
+| TP53 | Tumor protein p53 | 0.86 | Breast carcinoma |
+| PIK3CA | PI3K catalytic subunit alpha | 0.85 | Breast carcinoma |
+| CHEK2 | Checkpoint kinase 2 | 0.84 | Breast carcinoma |
+| ATM | ATM serine/threonine kinase | 0.84 | Breast carcinoma |
+| RAD51C | RAD51 paralog C | 0.83 | Breast carcinoma |
+| CDH1 | Cadherin 1 | 0.82 | Breast carcinoma |
+| ESR1 | Estrogen receptor 1 | 0.82 | Breast carcinoma |
+| AKT1 | AKT serine/threonine kinase 1 | 0.81 | Breast carcinoma |
+
+*Additional comparable targets for ovarian, prostate, and neoplasm are in the query response; above is a sample for breast carcinoma.*
+
+### Related targets (pathway/network)
+
+Targets that physically or functionally interact with BRCA2. Source: `target.interactions` (IntAct, Signor, Reactome, STRING).
+
+| Symbol | Name | Source |
+|--------|------|--------|
+| PALB2 | Partner and localizer of BRCA2 | string |
+| RAD51 | RAD51 recombinase | string / intact |
+| BRCA1 | BRCA1 DNA repair associated | string |
+| FANCD2 | FA complementation group D2 | string |
+| RAD51C | RAD51 paralog C | string |
+| XRCC3 | X-ray repair cross complementing 3 | string |
+| ATM | ATM serine/threonine kinase | string |
+| BARD1 | BRCA1 associated RING domain 1 | string |
+| ATR | ATR checkpoint kinase | string |
+| CHEK1 | Checkpoint kinase 1 | string |
+| BRIP1 | BRCA1 interacting DNA helicase 1 | string |
+| *+ 18 more* | *Full list in oncology-result.json* | — |
+
+**Strategic point:** Competitors are dominated by endocrine therapy, HER2-targeted agents, CDK4/6 and PARP inhibitors, and chemotherapy in breast/ovarian/prostate and neoplasm. Comparable targets include HRR/DDR genes (BRCA1, PALB2, RAD51C, ATM, CHEK2) and signalling nodes (PIK3CA, ESR1, ERBB2). Pathway neighbours reinforce the HRR/DDR cluster and synthetic-lethality context.
+
+---
+
+## 12. Commercial opportunity map
+
+*Source: Curated inputs (not from API).*
+
+### Revenue-generating strategies (ranked)
+
+| Strategy | Feasibility | Revenue potential | Reality check |
+|----------|-------------|-------------------|---------------|
+| Biomarker-driven trial enrichment | High | High | Already standard; still expandable |
+| PARP + novel combo (ATR, POLθ) | High | Very high | Competitive but still open |
+| Resistance reversal therapies | Medium | Very high | Underserved, high-value niche |
+| Fanconi anemia gene restoration | Medium | Medium | Orphan economics |
+| Direct BRCA2 modulation | Low | Unknown | Long-term science project |
+
+### Alpha insight
+
+The opportunity is not BRCA2 per se but **the dynamic loss and restoration of BRCA2 function over time**. That unlocks resistance tracking, adaptive therapy, and sequencing strategies—and justifies investment in biomarkers and combinations that address reversion and HR restoration, not only front-line synthetic lethality.
+
+### Near-term wedge
+
+The most valuable near-term wedge is **BRCA2 + longitudinal biomarker platform**: detecting reversion mutations, HR restoration, and therapy escape. That supports diagnostics, trial enablement, and pharma partnerships without requiring a direct BRCA2 drug.
 
 ---
 

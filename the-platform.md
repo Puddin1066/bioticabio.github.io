@@ -1,5 +1,6 @@
 ---
 title: The platform
+layout: default
 nav_order: 8
 description: Open Targets Platform — the evidence base behind Biotica Bio assessments
 ---
@@ -7,6 +8,18 @@ description: Open Targets Platform — the evidence base behind Biotica Bio asse
 # The platform
 
 Biotica Bio assessments are powered by the **Open Targets Platform**: a public, evidence-based resource that integrates targets, diseases, drugs, and associations from many curated and experimental sources.
+{: .lead }
+
+## Why Open Targets matters
+
+The Open Targets Platform is the same evidence base that **industry and academia** use for target validation and drug discovery. Its value comes from:
+
+- **Public and trusted** — Non-proprietary; targets, diseases, drugs, variants, and studies are annotated and linked from curated and experimental sources (genetics, literature, pathways, tractability, safety).
+- **Integrated model** — One framework connects [targets](https://platform-docs.opentargets.org/target), [diseases and phenotypes](https://platform-docs.opentargets.org/disease-or-phenotype), [evidence](https://platform-docs.opentargets.org/evidence), and [scored target–disease associations](https://platform-docs.opentargets.org/associations), so you get a consistent picture instead of scattered databases.
+- **Evidence in one place** — Associations are generated and scored from many datasources; the Platform aggregates and weights this so you can interrogate it interactively or via API.
+- **Single API, reproducible** — One GraphQL API delivers the full evidence picture. Same query, same result; you can re-run or audit as data updates.
+
+We build on this so every Biotica Bio narrative is **traceable, updatable, and aligned with the same standard the rest of the field uses**.
 
 ## What the Platform provides
 
@@ -22,6 +35,20 @@ The [Open Targets Platform](https://www.opentargets.org/) exposes a **GraphQL AP
 
 That evidence is the same data that industry and academia use for target validation and drug discovery. We don’t own or host it—we **query it, interpret it, and turn it into strategy and due-diligence narratives** for startups and investors.
 
+## Entities and query space
+
+The Platform's [data model](https://platform-docs.opentargets.org/getting-started) is built around five main entities. The GraphQL API lets you query by entity and then traverse to related data—so you can start from a target, a disease, or a drug and get the full linked picture.
+
+| Entity | What it is | Query entry (example) | What you can ask for from it |
+|--------|------------|------------------------|------------------------------|
+| **Target** | Candidate drug-binding molecule (e.g. gene/product) | `target(ensemblId: "ENSG00000139618")` | Pathways, GO, hallmarks, tractability, **associatedDiseases**, **knownDrugs**, evidence, prioritisation, safety, expression, interactions |
+| **Disease / Phenotype** | Disease indication, phenotype, or trait (EFO/MONDO) | `disease(efoId: "EFO_0000616")` | Name, ontology; **associatedTargets**, **knownDrugs**; therapeutic area |
+| **Drug** | Molecule as medicinal product (ChEMBL) | `drug(chemblId: "CHEMBL192")` | Indications, mechanisms, targets, phases, drug type |
+| **Variant** | DNA variant associated with disease or trait | *via API* | Links to studies, traits, and targets |
+| **Study** | Source of evidence (e.g. GWAS) linking variants to traits | *via API* | Links to variants, traits, molecular phenotypes |
+
+In practice, Biotica Bio assessments typically **start from a target** (Ensembl ID) or **from a disease** (EFO ID): one query then pulls associations, known drugs, evidence, and—when we need landscape context—related diseases and their associated targets and drugs. The same API supports target-centric, disease-centric, or drug-centric views so the query space matches how you think about the biology or the deal.
+
 ## Why it matters for you
 
 - **Credibility** — Every claim in a Biotica Bio report can be traced back to the Platform and its upstream sources.
@@ -36,4 +63,5 @@ Biotica Bio is not affiliated with Open Targets. We use the Platform as our prim
 ## Links
 
 - [Open Targets](https://www.opentargets.org/)
+- [Open Targets — Getting started](https://platform-docs.opentargets.org/getting-started) (data model, evidence, associations)
 - [Open Targets Platform GraphQL API](https://api.platform.opentargets.org/api/v4/graphql) (browser Playground and schema)

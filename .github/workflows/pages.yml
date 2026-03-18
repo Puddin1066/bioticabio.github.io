@@ -27,15 +27,19 @@ jobs:
           ruby-version: '3.3'
           bundler-cache: true
           cache-version: 0
+        working-directory: bioticabio-docs
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
+        working-directory: bioticabio-docs
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: bioticabio-docs/_site
 
   deploy:
     environment:

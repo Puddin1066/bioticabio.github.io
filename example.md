@@ -1,5 +1,6 @@
 ---
 title: Example
+layout: default
 nav_order: 5
 description: Example Biotica Bio deliverable — oncology target assessment
 has_children: true
@@ -7,9 +8,8 @@ has_children: true
 
 # Example deliverable
 
-This is the kind of structured, evidence-backed assessment we deliver for targets and indications.
-
-Below is a full example: a comprehensive oncology target report for **BRCA2**, generated from the Open Targets Platform and interpreted for strategy and diligence.
+Below is a full example of a Biotica Bio assessment: a comprehensive oncology target report for **BRCA2**, generated from the Open Targets Platform and interpreted for strategy and diligence.
+{: .lead }
 
 [**BRCA2 executive oncology target assessment**]({% link example/brca2-report.md %}) — Full report (biology, disease associations, druggability, genetic constraint, DepMap, expression, literature, strategic synthesis).
 

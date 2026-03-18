@@ -1,20 +1,23 @@
 ---
 title: What we do
+layout: default
 nav_order: 2
 description: Biotica Bio services for startups and investors
 ---
 
 # What we do
 
-We deliver the following as scoped engagements.
+Biotica Bio delivers evidence-based target and strategy support for life sciences startups and investment firms. Every deliverable is grounded in the **Open Targets Platform**, so narratives are traceable to the same public evidence that industry uses—and can be re-run or updated as data changes.
+{: .lead }
 
-{: .note }
-**Our approach.** Same evidence base as industry—synthesised for your process and timeline. Reproducible and auditable.
+## Services
 
 - **Target and indication assessment** — Comprehensive, oncology-style assessments (biology, disease associations, druggability, safety, prioritisation) from a single Open Targets query, interpreted for strategy and R&D.
 - **Due diligence support** — Evidence-led review of targets and pipelines for investors: reproducible, auditable, and aligned with public data releases.
 - **Pipeline and portfolio review** — Prioritisation and landscape context so you can focus resources and narrative on the strongest opportunities.
 - **Executive summaries and one-pagers** — Board- or partner-ready outputs when you need brevity without losing rigour.
+
+## Engagement
 
 All engagements are **scoped and confidential**. We do not invest, so there is no conflict of interest.
 
