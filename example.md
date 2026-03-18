@@ -13,4 +13,6 @@ Below is a full example of a Biotica Bio assessment: a comprehensive oncology ta
 
 [**BRCA2 executive oncology target assessment**]({% link example/brca2-report.md %}) — Full report (biology, disease associations, druggability, genetic constraint, DepMap, expression, literature, strategic synthesis).
 
+[**Progesterone drug-centric assessment**]({% link example/progesterone-report.md %}) — Drug-centric example (indications, targets, mechanism, repurposing context).
+
 For how this was built (one query → data → narrative), see [How it's built]({{ site.baseurl }}{% link how-its-built.md %}).

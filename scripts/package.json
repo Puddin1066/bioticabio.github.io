@@ -1,0 +1,17 @@
+{
+  "name": "biotica-report-generator",
+  "description": "Fetch Open Targets data and generate pragmatic oncology target reports",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "fetch": "node fetch.js",
+    "generate": "node generate-report.js",
+    "report": "node generate-report.js",
+    "fetch-drug": "node fetch-drug.js",
+    "generate-drug": "node generate-drug-report.js"
+  },
+  "dependencies": {
+    "graphql-request": "^7.0.0"
+  }
+}

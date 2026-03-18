@@ -20,4 +20,4 @@ aux_links:
 footer_content: ""
 
 # Nav: pages use nav_order in front matter; order below matches intended sidebar order
-# Home (index) -> What we do -> For startups -> For investors -> Example (parent) -> BRCA2 report -> How it's built -> The platform -> About -> Contact
+# Home (index) -> What we do -> For startups -> For investors -> Example (parent) -> BRCA2 report -> Progesterone report -> How it's built -> The platform -> About -> Contact

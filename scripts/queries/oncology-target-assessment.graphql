@@ -1,0 +1,38 @@
+# Comprehensive oncology target assessment
+# Variable: $ensemblId (e.g. ENSG00000139618 for BRCA2)
+query OncologyTargetAssessment($ensemblId: String!) {
+  target(ensemblId: $ensemblId) {
+    id
+    approvedSymbol
+    approvedName
+    biotype
+    genomicLocation { chromosome start end strand }
+    pathways { pathwayId pathway topLevelTerm }
+    geneOntology { term { id name } aspect evidence geneProduct source }
+    functionDescriptions
+    hallmarks {
+      cancerHallmarks { label description impact pmid }
+      attributes { name description pmid }
+    }
+    tractability { label modality value }
+    targetClass { id label level }
+    chemicalProbes { id isHighQuality mechanismOfAction probeMinerScore urls { niceName url } }
+    tep { name uri therapeuticArea description }
+    knownDrugs(size: 20) {
+      count uniqueDrugs uniqueDiseases
+      rows { drugId prefName drugType diseaseId label phase status mechanismOfAction targetClass }
+    }
+    associatedDiseases(page: { index: 0, size: 25 }, orderByScore: "score desc") {
+      count
+      rows { score datatypeScores { id score } datasourceScores { id score } disease { id name therapeuticAreas { id name } } }
+    }
+    evidences(efoIds: ["EFO_0000616"], size: 10) { count rows { id score datasourceId datatypeId disease { id } target { id } } }
+    isEssential
+    depMapEssentiality { tissueId tissueName screens { cellLineName diseaseFromSource geneEffect expression } }
+    prioritisation { items { key value } }
+    safetyLiabilities { event eventId datasource effects { direction dosing } literature url biosamples { tissueLabel cellLabel } }
+    expressions { tissue { id label anatomicalSystems organs } rna { level zscore value unit } protein { level reliability } }
+    geneticConstraint { constraintType score oe oeLower oeUpper }
+    literatureOcurrences(startYear: 2015) { count rows { pmid publicationDate pmcid } }
+  }
+}

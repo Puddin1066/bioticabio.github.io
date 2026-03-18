@@ -65,7 +65,7 @@ query OncologyTargetAssessment {
 
 Example target IDs: BRCA1 `ENSG00000012048`, EGFR `ENSG00000146648`, KRAS `ENSG00000133703`, TP53 `ENSG00000141510`, PIK3CA `ENSG00000121879`.
 
-For the full query file (with comments), see `docs/oncology-target-assessment.graphql` in the project repository (the same repo that contains this docs site).
+The query file is in this repository at `scripts/queries/oncology-target-assessment.graphql`. To regenerate the report from the API, run the scripts in `scripts/` (see `scripts/README.md`).
 
 ## Reproducibility
 
