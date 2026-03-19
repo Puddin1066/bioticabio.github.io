@@ -147,6 +147,21 @@
 }
 
 // Footer: smaller, ordered (wrapper class used in footer_custom.html)
+//
+// just-the-docs uses the same class `.site-footer` for the *sidebar* footer and applies:
+// - `position: absolute; bottom: 0` below the `md` breakpoint
+// - `width: $nav-width` at `lg`
+// Our `footer_custom.html` wraps the page footer in `.site-footer` inside `<footer>` in the
+// main column — those theme rules incorrectly pin/squash it. Reset only for the real page footer.
+.main-content footer .site-footer {
+  position: static;
+  bottom: auto;
+  left: auto;
+  width: 100%;
+  max-width: none;
+  justify-self: stretch;
+}
+
 .site-footer {
   font-size: 0.8125rem;
   line-height: 1.5;
