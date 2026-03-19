@@ -10,6 +10,15 @@ description: Scoped, evidence-led assessments — get a proposal and timeline.
 We scope to your needs—single targets, portfolios, or disease-centric scans—with a fixed proposal and delivery timeline. Every deliverable is grounded in the Open Targets Platform, so narratives are traceable and updatable as data changes.
 {: .lead }
 
+## Pricing that fits the boardroom
+
+We structure engagements so decision makers get **predictable spend**, **clear deliverables**, and **no scope creep**. No hourly surprises or open-ended SOWs—you approve a fixed scope, price, and timeline up front. Ideal for budget planning, procurement, and internal sign-off in pharma and biotech.
+
+- **Fixed-fee, fixed-timeline** — Agreed price and delivery date before work starts.
+- **Entity-based scoping** — Price and effort scale transparently with the number of targets, diseases, or drugs you choose.
+- **Portfolio and program options** — Multi-project or ongoing monitoring can be quoted as a single engagement for easier approval and reporting.
+- **Evidence you can stand behind** — All outputs traceable to the Open Targets Platform; suitable for internal governance and external partners.
+
 ## How we scope
 
 Fees and timeline are determined by the entities you specify and the depth of analysis. Every deliverable is traceable to [the Platform]({% link the-platform.md %}) evidence.
@@ -25,7 +34,7 @@ You get a fixed price and timeline up front—no surprises.
 
 ## Get in touch
 
-**Email:** [contact@bioticabio.com](mailto:contact@bioticabio.com)
+**Email:** [john@bioticabio.com](mailto:john@bioticabio.com)
 
 ## Next step
 
