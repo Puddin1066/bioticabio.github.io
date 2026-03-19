@@ -246,6 +246,9 @@
 // Mobile refinements for dense report pages and header controls
 @media (max-width: 50rem) {
   .main-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
     gap: $sp-2;
 
     .site-tagline {
@@ -278,5 +281,23 @@
   .main-content table th,
   .main-content table td {
     min-width: 8rem;
+  }
+
+  // Hide heading anchor controls on mobile; they crowd long H1/H2 titles.
+  .main-content .anchor-heading {
+    display: none;
+  }
+
+  // Keep anchored headings visible below the sticky header.
+  .main-content h1,
+  .main-content h2,
+  .main-content h3,
+  .main-content h4 {
+    scroll-margin-top: 9rem;
+  }
+
+  // Extra breathing room beneath the header on first paint.
+  .main-content-wrap {
+    padding-top: $sp-3;
   }
 }
