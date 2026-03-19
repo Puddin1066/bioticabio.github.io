@@ -197,6 +197,22 @@
   background: rgba(0, 0, 0, 0.02);
 }
 
+// Prevent horizontal overflow in report content on narrow screens
+.main-content {
+  overflow-wrap: anywhere;
+}
+
+.main-content pre {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.main-content img,
+.main-content svg {
+  max-width: 100%;
+  height: auto;
+}
+
 // Lead paragraph (use {: .lead } in Markdown)
 .main-content .lead {
   font-size: 1.0625rem;
@@ -225,4 +241,42 @@
   background: var(--grey-lt-000, #f5f6fa);
   border-radius: 4px;
   margin: 1rem 0;
+}
+
+// Mobile refinements for dense report pages and header controls
+@media (max-width: 50rem) {
+  .main-header {
+    gap: $sp-2;
+
+    .site-tagline {
+      order: 2;
+      flex: 1 0 100%;
+      max-width: none;
+      padding: 0;
+    }
+
+    .search {
+      order: 3;
+      width: 100%;
+      flex: 1 0 100%;
+    }
+
+    nav {
+      order: 4;
+      width: 100%;
+      margin-left: 0;
+      padding-left: 0;
+    }
+  }
+
+  .main-content table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .main-content table th,
+  .main-content table td {
+    min-width: 8rem;
+  }
 }

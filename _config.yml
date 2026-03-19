@@ -21,3 +21,10 @@ footer_content: ""
 
 # Nav: pages use nav_order in front matter; order below matches intended sidebar order
 # Home (index) -> What we do -> For startups -> For investors -> Example (parent) -> BRCA2 report -> Progesterone report -> Pro-ocular evaluation -> Progesterone/trigeminal/dry eye -> How it's built -> The platform -> About -> Contact
+
+# Keep generated report artifacts out of navigation on all viewports.
+defaults:
+  - scope:
+      path: "reports/generated"
+    values:
+      nav_exclude: true
