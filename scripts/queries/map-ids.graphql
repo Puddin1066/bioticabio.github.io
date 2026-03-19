@@ -1,0 +1,31 @@
+# Map free-text terms to canonical Platform IDs (e.g. "dry eye disease" -> EFO ID)
+# Variables: $queryTerms (e.g. ["dry eye disease", "keratoconjunctivitis sicca"]), $entityNames (e.g. ["disease"])
+query MapIds($queryTerms: [String!]!, $entityNames: [String!]) {
+  mapIds(queryTerms: $queryTerms, entityNames: $entityNames) {
+    total
+    mappings {
+      term
+      hits {
+        id
+        name
+        entity
+        score
+        object {
+          ... on Disease {
+            id
+            name
+          }
+          ... on Target {
+            id
+            approvedSymbol
+            approvedName
+          }
+          ... on Drug {
+            id
+            name
+          }
+        }
+      }
+    }
+  }
+}

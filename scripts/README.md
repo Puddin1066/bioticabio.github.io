@@ -118,3 +118,99 @@ node fetch-drug.js CHEMBL103 && node generate-drug-report.js
 | `fetch-drug.js` | Calls the API; writes `_data/drug-result.json` |
 | `drug-report-builder.js` | Display-rules layer for drug reports (exec summary, profile, indications, targets, repurposing) |
 | `generate-drug-report.js` | Reads JSON, runs drug report builder, writes `example/progesterone-report.md` (or `--out`) |
+
+---
+
+## Pro-ocular evaluation report
+
+A **Pro-ocular (Signal12) evaluation** report uses the Open Targets **disease** entity for the indications Pro-ocular targets: dry eye, Sjögren syndrome, and graft-versus-host disease. It summarizes indication space, competitive landscape (knownDrugs), target/mechanism landscape (associatedTargets), and commercial/R&D relevance. Pro-ocular is not in the Platform; the report evaluates the indication and competitive space from the API and adds curated Pro-ocular context.
+
+### Fetch Pro-ocular indication data
+
+```bash
+node fetch-pro-ocular.js
+```
+
+- Uses three fixed indication EFO IDs (dry eye, Sjögren, GVHD); reuses `queries/disease-landscape.graphql`
+- Writes `_data/pro-ocular-result.json`
+
+### Generate Pro-ocular report
+
+```bash
+node generate-pro-ocular-report.js
+```
+
+- Reads `_data/pro-ocular-result.json`
+- Writes `example/pro-ocular-evaluation-report.md` (or `--out` path)
+
+Options:
+
+```bash
+node generate-pro-ocular-report.js --from-json _data/pro-ocular-result.json --out example/pro-ocular-evaluation-report.md
+```
+
+### One-shot (Pro-ocular)
+
+```bash
+node fetch-pro-ocular.js && node generate-pro-ocular-report.js
+```
+
+### Pro-ocular pipeline files
+
+| File | Purpose |
+|------|--------|
+| `queries/disease-landscape.graphql` | Disease query by efoId (knownDrugs, associatedTargets); reused for Pro-ocular |
+| `fetch-pro-ocular.js` | Calls the API for each of three indication EFO IDs; writes `_data/pro-ocular-result.json` |
+| `pro-ocular-report-builder.js` | Builds Pro-ocular evaluation Markdown (indication space, competitive/target landscape, commercial/R&D, provenance) |
+| `generate-pro-ocular-report.js` | Reads JSON, runs report builder, writes `example/pro-ocular-evaluation-report.md` (or `--out`) |
+
+---
+
+## Progesterone, trigeminal targets & dry eye report
+
+An **integrated** report that evaluates **progesterone** (drug), **trigeminal nerve–related targets** (genes), and **dry eye disease** (indication) using the Open Targets Platform. It uses **search** and **mapIds** to resolve dry eye EFO IDs and trigeminal target Ensembl IDs, then fetches drug (CHEMBL103), disease(s), and target summaries.
+
+### Fetch data
+
+```bash
+node fetch-progesterone-trigeminal-dry-eye.js
+```
+
+- Resolves dry eye via `mapIds` (terms: dry eye disease, keratoconjunctivitis sicca, dry eye); falls back to `search` if needed
+- Resolves trigeminal targets via `search` (query: "trigeminal"), then fetches target summaries
+- Fetches progesterone (drug) and dry eye disease(efoId) for resolved EFO IDs
+- Writes `_data/progesterone-trigeminal-dry-eye.json`
+
+### Generate report
+
+```bash
+node generate-progesterone-trigeminal-dry-eye-report.js
+```
+
+- Reads `_data/progesterone-trigeminal-dry-eye.json`
+- Writes `example/progesterone-trigeminal-dry-eye-report.md` (or `--out` path)
+
+Options:
+
+```bash
+node generate-progesterone-trigeminal-dry-eye-report.js --from-json _data/progesterone-trigeminal-dry-eye.json --out example/progesterone-trigeminal-dry-eye-report.md
+```
+
+### One-shot
+
+```bash
+node fetch-progesterone-trigeminal-dry-eye.js && node generate-progesterone-trigeminal-dry-eye-report.js
+```
+
+### Pipeline files
+
+| File | Purpose |
+|------|--------|
+| `queries/search-entities.graphql` | Full-text search for entity resolution |
+| `queries/map-ids.graphql` | Map free-text terms to canonical IDs |
+| `queries/target-summary.graphql` | Lightweight target (pathways, knownDrugs, associatedDiseases) |
+| `queries/disease-dry-eye.graphql` | Disease with description, parents, larger knownDrugs/associatedTargets |
+| `queries/drug-assessment.graphql` | Drug by chemblId (reused) |
+| `fetch-progesterone-trigeminal-dry-eye.js` | mapIds/search then drug + disease(s) + target(s); writes JSON |
+| `progesterone-trigeminal-dry-eye-report-builder.js` | Builds integrated Markdown (progesterone, dry eye, trigeminal, integration, provenance) |
+| `generate-progesterone-trigeminal-dry-eye-report.js` | Reads JSON, runs builder, writes report |

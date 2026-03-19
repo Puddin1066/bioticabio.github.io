@@ -15,4 +15,8 @@ Below is a full example of a Biotica Bio assessment: a comprehensive oncology ta
 
 [**Progesterone drug-centric assessment**]({% link example/progesterone-report.md %}) — Drug-centric example (indications, targets, mechanism, repurposing context).
 
+[**Pro-ocular (Signal12) evaluation**]({% link example/pro-ocular-evaluation-report.md %}) — Indication and competitive landscape from Open Targets for dry eye, Sjögren, and GVHD.
+
+[**Progesterone, trigeminal targets & dry eye**]({% link example/progesterone-trigeminal-dry-eye-report.md %}) — Open Targets–backed integration of progesterone (drug), trigeminal nerve–related targets, and dry eye disease.
+
 For how this was built (one query → data → narrative), see [How it's built]({{ site.baseurl }}{% link how-its-built.md %}).

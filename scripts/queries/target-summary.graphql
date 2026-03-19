@@ -1,0 +1,26 @@
+# Lightweight target summary for multiple targets (pathways, known drugs, associated diseases)
+# Variable: $ensemblId (e.g. from search for "trigeminal")
+query TargetSummary($ensemblId: String!) {
+  target(ensemblId: $ensemblId) {
+    id
+    approvedSymbol
+    approvedName
+    pathways { pathwayId pathway topLevelTerm }
+    knownDrugs(size: 10) {
+      count
+      rows {
+        drugId
+        prefName
+        phase
+        target { approvedSymbol }
+      }
+    }
+    associatedDiseases(page: { index: 0, size: 15 }, orderByScore: "score desc") {
+      count
+      rows {
+        score
+        disease { id name }
+      }
+    }
+  }
+}

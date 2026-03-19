@@ -1,0 +1,18 @@
+{
+  "_meta": {
+    "fetchedAt": "2026-01-01T00:00:00.000Z",
+    "translationSource": "config",
+    "dryEyeEfoIds": ["EFO_0000699"],
+    "dryEyeProxyLabels": ["[MOCK] Sjögren syndrome (mock)"],
+    "trigeminalGeneSymbols": ["TRPV1"],
+    "trigeminalTargetIds": ["ENSG00000196689"],
+    "source": "[MOCK] Open Targets data"
+  },
+  "drug": {
+    "id": "CHEMBL103",
+    "name": "Progesterone",
+    "description": "[MOCK] Drug data from MockOpenTargetsProvider."
+  },
+  "diseases": {},
+  "targets": {}
+}

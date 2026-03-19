@@ -35,6 +35,16 @@ The [Open Targets Platform](https://www.opentargets.org/) exposes a **GraphQL AP
 
 That evidence is the same data that industry and academia use for target validation and drug discovery. We don’t own or host it—we **query it, interpret it, and turn it into strategy and due-diligence narratives** for startups and investors.
 
+## Benchmarking drug, target, and indication potential
+
+A valuable way to use the Platform is to **benchmark** drug, gene (target), or indication **potential and evaluations** on the same evidence base. Because the API delivers consistent entities (targets, diseases, drugs), scored associations, prioritisation metrics, tractability, and known drugs per indication, you can:
+
+- **Compare targets** — Same query shape for any gene; prioritisation scores, association scores, and tractability let you rank or compare targets within a therapeutic area or pipeline.
+- **Compare indications** — Disease-level data (associated targets, known drugs, therapeutic area) supports comparing indications for a given drug or target, or benchmarking one indication against the landscape.
+- **Compare drugs** — Drug-centric queries (mechanisms, indications, targets) give a consistent basis to evaluate repurposing potential or positioning across a shortlist.
+
+We use this in practice as **pipeline prioritisation** and **competitive context**: compare targets and indications on the same evidence base, see how a thesis sits relative to the Platform landscape, and re-run as data updates so benchmarks stay current. Reports don't yet expose a single "benchmark score" widget—they interpret the same underlying scores and landscape data so you can focus on the best opportunities and differentiation.
+
 ## Entities and query space
 
 The Platform's [data model](https://platform-docs.opentargets.org/getting-started) is built around five main entities. The GraphQL API lets you query by entity and then traverse to related data—so you can start from a target, a disease, or a drug and get the full linked picture.

@@ -1,0 +1,29 @@
+# Full-text search across entities for resolution (e.g. dry eye -> disease, trigeminal -> targets)
+# Variables: $queryString (e.g. "trigeminal"), $entityNames (e.g. ["target"]), $page: { index: 0, size: 10 }
+query SearchEntities($queryString: String!, $entityNames: [String!], $page: Pagination) {
+  search(queryString: $queryString, entityNames: $entityNames, page: $page) {
+    total
+    hits {
+      id
+      name
+      entity
+      category
+      score
+      object {
+        ... on Disease {
+          id
+          name
+        }
+        ... on Target {
+          id
+          approvedSymbol
+          approvedName
+        }
+        ... on Drug {
+          id
+          name
+        }
+      }
+    }
+  }
+}

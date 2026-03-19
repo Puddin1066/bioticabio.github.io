@@ -1,0 +1,18 @@
+# Disease-level data for dry eye (richer: description, parents, larger knownDrugs/associatedTargets, enableIndirect)
+# Variable: $efoId (resolved via mapIds or search for "dry eye")
+query DiseaseDryEye($efoId: String!) {
+  disease(efoId: $efoId) {
+    id
+    name
+    description
+    therapeuticAreas { id name }
+    knownDrugs(size: 50) {
+      count
+      rows { drugId prefName drugType phase status mechanismOfAction targetId target { approvedSymbol approvedName } }
+    }
+    associatedTargets(page: { index: 0, size: 50 }, orderByScore: "score desc", enableIndirect: true) {
+      count
+      rows { score target { id approvedSymbol approvedName } }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"StubWebContextProvider.d.ts","sourceRoot":"","sources":["../../src/web/StubWebContextProvider.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,mBAAmB,EAAE,gBAAgB,EAAE,MAAM,0BAA0B,CAAC;AAEtF;;;GAGG;AACH,qBAAa,sBAAuB,YAAW,mBAAmB;IAC1D,YAAY,CAAC,MAAM,EAAE,MAAM,EAAE,QAAQ,CAAC,EAAE;QAAE,UAAU,CAAC,EAAE,MAAM,CAAA;KAAE,GAAG,OAAO,CAAC,gBAAgB,CAAC;CAMlG"}

@@ -1,0 +1,14 @@
+{
+  "dry_eye": {
+    "description": "Dry eye is poorly represented as a single EFO node; we use ontology proxies that overlap clinically (sicca, Sjögren, ocular surface).",
+    "efo_proxies": [
+      { "efoId": "EFO_0000699", "label": "Sjögren syndrome" }
+    ],
+    "search_terms_fallback": ["dry eye disease", "keratoconjunctivitis sicca", "dry eye"]
+  },
+  "trigeminal_pathway": {
+    "description": "Trigeminal nerve is anatomy; Open Targets indexes genes. We use gene-level proxies for sensory/neuro-lacrimal biology.",
+    "gene_symbols": ["TRPV1", "TRPM8", "SCN9A", "CHRM3"],
+    "rationale": "TRPV1 (nociception/inflammation), TRPM8 (cold/tear reflex), SCN9A (Nav1.7, sensory transmission), CHRM3 (lacrimal parasympathetic)."
+  }
+}

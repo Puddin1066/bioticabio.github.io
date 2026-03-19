@@ -1,0 +1,29 @@
+# Drug-centric assessment for repurposing and commercial context
+# Variable: $chemblId (e.g. CHEMBL103 for Progesterone)
+query DrugAssessment($chemblId: String!) {
+  drug(chemblId: $chemblId) {
+    id
+    name
+    synonyms
+    tradeNames
+    description
+    drugType
+    mechanismsOfAction {
+      uniqueActionTypes
+      uniqueTargetTypes
+      rows {
+        targetName
+        targets { id approvedSymbol approvedName }
+        mechanismOfAction
+        actionType
+      }
+    }
+    indications {
+      count
+      rows {
+        disease { id name }
+      }
+    }
+    drugWarnings { warningType description country }
+  }
+}

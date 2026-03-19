@@ -20,19 +20,110 @@
   }
 }
 
+// Sidebar nav
+.side-bar {
+  .nav-list {
+    margin-top: 0.75rem;
+  }
+
+  .nav-list .nav-list-item {
+    margin-bottom: 0.125rem;
+  }
+
+  .nav-list-link {
+    padding-left: 0.5rem;
+    border-left: 3px solid transparent;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.04);
+    }
+  }
+
+  .nav-list-item.active .nav-list-link,
+  .nav-list-link.active,
+  .nav-list-link[aria-current="page"] {
+    border-left-color: var(--link-color, #264caf);
+    background: rgba(38, 76, 175, 0.08);
+    font-weight: 600;
+  }
+}
+
 // Nav footer tagline (sidebar)
 .nav-footer-tagline {
   font-size: 0.75rem;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-color);
   margin-bottom: 0.25rem;
   opacity: 0.9;
 }
 
-// Site tagline (header_custom)
+.side-bar .nav-footer-link {
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+// Main header (top bar: search, tagline, aux links)
+.main-header {
+  padding-left: $sp-4;
+  padding-right: $sp-4;
+  background-color: var(--grey-lt-000, #f5f6fa);
+  border-bottom: 1px solid var(--border-color);
+  align-items: center;
+  gap: $sp-4;
+  flex-wrap: wrap;
+
+  @include mq(md) {
+    padding-left: $gutter-spacing;
+    padding-right: $gutter-spacing;
+    gap: $sp-5;
+  }
+
+  .search {
+    flex-shrink: 0;
+  }
+
+  nav {
+    flex-shrink: 0;
+    margin-left: auto;
+    padding-left: $sp-3;
+
+    a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: $sp-2 $sp-3;
+      border-radius: $border-radius;
+      text-decoration: none;
+      color: var(--link-color, #264caf);
+
+      &:hover {
+        background: rgba(38, 76, 175, 0.08);
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+// Site tagline (header_custom) — in main header
+.main-header .site-tagline {
+  font-size: 0.8125rem;
+  color: var(--body-text-color);
+  opacity: 0.9;
+  margin: 0;
+  padding: 0 $sp-3;
+  border: none;
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 28rem;
+  line-height: 1.4;
+}
+
+// Site tagline when used elsewhere (e.g. sidebar context)
 .site-tagline {
   font-size: 0.875rem;
   color: var(--body-text-color);
   opacity: 0.9;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--border-color);
 }

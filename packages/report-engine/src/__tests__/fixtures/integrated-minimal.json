@@ -1,0 +1,38 @@
+{
+  "_meta": {
+    "fetchedAt": "2026-01-01T00:00:00.000Z",
+    "translationSource": "config/ontology-translation.json",
+    "dryEyeEfoIds": ["EFO_0000699"],
+    "dryEyeProxyLabels": ["Sjögren syndrome"],
+    "trigeminalGeneSymbols": ["TRPV1", "TRPM8"],
+    "trigeminalTargetIds": ["ENSG00000196689", "ENSG00000144481"],
+    "source": "Open Targets Platform"
+  },
+  "drug": {
+    "id": "CHEMBL103",
+    "name": "Progesterone",
+    "drugType": "Small molecule",
+    "description": "Test drug.",
+    "mechanismsOfAction": { "rows": [{ "targetName": "PGR", "mechanismOfAction": "Agonist" }] },
+    "indications": { "count": 2, "rows": [{ "disease": { "name": "Breast cancer" } }] }
+  },
+  "diseases": {
+    "EFO_0000699": {
+      "id": "EFO_0000699",
+      "name": "Sjögren syndrome",
+      "therapeuticAreas": [{ "name": "Autoimmune" }],
+      "knownDrugs": { "count": 1, "rows": [{ "prefName": "Pilocarpine", "phase": "approved" }] },
+      "associatedTargets": { "count": 2, "rows": [{ "score": 0.5, "target": { "approvedSymbol": "IRF5" } }] }
+    }
+  },
+  "targets": {
+    "ENSG00000196689": {
+      "id": "ENSG00000196689",
+      "approvedSymbol": "TRPV1",
+      "approvedName": "Transient receptor potential cation channel subfamily V member 1",
+      "pathways": [{ "topLevelTerm": "Sensory" }],
+      "knownDrugs": { "count": 0, "rows": [] },
+      "associatedDiseases": { "count": 1, "rows": [{ "disease": { "name": "Pain" } }] }
+    }
+  }
+}
