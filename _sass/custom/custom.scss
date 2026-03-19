@@ -151,6 +151,8 @@
   font-size: 0.8125rem;
   line-height: 1.5;
   margin-top: 1.5rem;
+  clear: both;
+  overflow-wrap: anywhere;
 }
 
 .site-footer p {
@@ -281,6 +283,21 @@
   .main-content table th,
   .main-content table td {
     min-width: 8rem;
+  }
+
+  // Footer can be dense on mobile; force clean wrapping and spacing.
+  .site-footer {
+    margin-top: 2rem;
+    padding-top: 0.75rem;
+    padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
+  }
+
+  .site-footer p,
+  .site-footer small {
+    display: block;
+    margin-right: 0;
+    white-space: normal;
+    word-break: break-word;
   }
 
   // Hide heading anchor controls on mobile; they crowd long H1/H2 titles.
