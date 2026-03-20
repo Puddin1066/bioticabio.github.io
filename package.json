@@ -3,9 +3,13 @@
   "private": true,
   "scripts": {
     "deploy": "vercel",
-    "deploy:prod": "vercel --prod"
+    "deploy:prod": "vercel --prod",
+    "gsc:top-queries": "node scripts/gsc-top-queries.mjs"
   },
   "devDependencies": {
     "vercel": "^39.0.0"
+  },
+  "dependencies": {
+    "googleapis": "^155.0.0"
   }
 }
