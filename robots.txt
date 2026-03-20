@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Generated reports are not index targets.
+Disallow: /reports/generated/
+
+Sitemap: https://bioticabio.com/sitemap.xml

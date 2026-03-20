@@ -5,6 +5,28 @@ url: https://bioticabio.com
 # Empty baseurl for local (jekyll serve). GitHub Pages sets baseurl at build time.
 baseurl: ""
 color_scheme: biotica
+lang: en-US
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+author:
+  name: Biotica Bio
+  url: https://bioticabio.com
+
+twitter:
+  username: bioticabio
+  card: summary_large_image
+
+social:
+  name: Biotica Bio
+  links:
+    - https://bioticabio.com
+
+seo:
+  type: WebSite
+  default_image: ""
 
 search_enabled: true
 heading_anchors: true
@@ -28,3 +50,5 @@ defaults:
       path: "reports/generated"
     values:
       nav_exclude: true
+      sitemap: false
+      robots: noindex,follow

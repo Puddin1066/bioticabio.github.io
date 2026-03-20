@@ -1,0 +1,58 @@
+{% assign schema_page_url = page.url | replace:'index.html','' | absolute_url %}
+{% assign schema_page_title = page.title | default: site.title %}
+{% assign schema_page_description = page.description | default: site.description %}
+{% assign schema_page_image = page.image | default: site.seo.default_image %}
+{% assign has_schema_default_image = false %}
+{% assign has_schema_page_image = false %}
+{% if site.seo.default_image and site.seo.default_image != "" %}
+  {% assign has_schema_default_image = true %}
+{% endif %}
+{% if schema_page_image and schema_page_image != "" %}
+  {% assign has_schema_page_image = true %}
+{% endif %}
+{% assign is_report_page = false %}
+{% if page.url contains '/example/' or page.url contains '/reports/' %}
+  {% assign is_report_page = true %}
+{% endif %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{{ site.social.name | default: site.title | escape }}",
+  "url": "{{ site.url }}"{% if has_schema_default_image %},
+  "logo": "{{ site.seo.default_image | absolute_url }}"{% endif %}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ site.title | escape }}",
+  "url": "{{ site.url }}",
+  "description": "{{ site.description | escape }}"
+}
+</script>
+
+{% if is_report_page %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "{{ schema_page_title | escape }}",
+  "description": "{{ schema_page_description | escape }}",
+  "url": "{{ schema_page_url }}",
+  "mainEntityOfPage": "{{ schema_page_url }}",
+  "author": {
+    "@type": "Organization",
+    "name": "{{ site.author.name | default: site.title | escape }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.social.name | default: site.title | escape }}"
+  }{% if has_schema_page_image %},
+  "image": "{{ schema_page_image | absolute_url }}"{% endif %}
+}
+</script>
+{% endif %}
