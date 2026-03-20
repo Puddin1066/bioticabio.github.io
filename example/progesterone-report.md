@@ -4,6 +4,20 @@ layout: default
 parent: Example
 nav_order: 2
 description: Drug-centric assessment for Progesterone — Biotica Bio example deliverable
+image: /assets/images/og-default.png
+keywords:
+  - progesterone drug assessment
+  - drug repurposing strategy
+  - biotech diligence example
+datePublished: 2026-03-01
+dateModified: 2026-03-20
+author_name: John Round
+author_title: Biotech Strategist
+author_linkedin: https://www.linkedin.com/in/john-round-475b764/
+about:
+  - Progesterone
+  - CHEMBL103
+  - drug repurposing
 ---
 
 # Progesterone: Drug-Centric Assessment
@@ -17,6 +31,23 @@ This assessment is for strategic and due-diligence use only; it does not constit
 For methodology, see [How it's built]({{ site.baseurl }}{% link how-its-built.md %}).
 
 *Data: Open Targets Platform. Interpretation and narrative: Biotica Bio.*
+
+---
+
+## Executive memo snapshot
+
+- **Decision focus:** Progesterone is a broad-indication asset suited to selective repurposing strategy.
+- **Upside:** Existing approval history and indication breadth support pragmatic lifecycle opportunities.
+- **Primary risk:** Commercial differentiation varies significantly by indication and competitive intensity.
+- **Near-term action:** Prioritise 1-2 indications with strongest evidence plus execution feasibility.
+
+## Operator capabilities demonstrated
+
+- Distills broad platform data into a focused strategic recommendation.
+- Separates evidence strength from marketability and execution reality.
+- Produces concise guidance for investment and development prioritisation.
+
+*Perspective: John Round, Biotica Bio.*
 
 ---
 

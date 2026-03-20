@@ -4,6 +4,20 @@ layout: default
 parent: Example
 nav_order: 3
 description: Open Targets–based evaluation of Pro-ocular indication and competitive space — Biotica Bio example report
+image: /assets/images/og-default.png
+keywords:
+  - dry eye competitive landscape
+  - ocular gvhd diligence
+  - open targets indication assessment
+datePublished: 2026-03-01
+dateModified: 2026-03-20
+author_name: John Round
+author_title: Biotech Strategist
+author_linkedin: https://www.linkedin.com/in/john-round-475b764/
+about:
+  - Pro-ocular
+  - Sjogren syndrome
+  - EFO_0000699
 ---
 
 # Pro-ocular (Signal12) evaluation
@@ -17,6 +31,23 @@ This report is for strategic and due-diligence use only; it does not constitute 
 For methodology, see [How it's built]({{ site.baseurl }}{% link how-its-built.md %}).
 
 *Data: Open Targets Platform. Pro-ocular context: Signal12. Interpretation: Biotica Bio.*
+
+---
+
+## Executive memo snapshot
+
+- **Decision focus:** Evaluate whether Pro-ocular sits in an investable unmet-need niche versus crowded categories.
+- **Upside:** Mechanism positioning is differentiated from dominant immune-modulation narratives.
+- **Primary risk:** Limited direct platform representation for product-specific positioning.
+- **Near-term action:** Anchor thesis on mechanism differentiation and indication-specific commercial wedge.
+
+## Operator capabilities demonstrated
+
+- Integrates external product context with platform evidence without overclaiming.
+- Handles sparse/indirect evidence conditions with explicit caveats.
+- Translates complex indication landscape into commercialization implications.
+
+*Perspective: John Round, Biotica Bio.*
 
 ---
 

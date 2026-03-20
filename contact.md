@@ -2,7 +2,11 @@
 title: Contact
 layout: default
 nav_exclude: true
-description: Scoped, evidence-led assessments — get a proposal and timeline.
+description: Contact Biotica Bio for scoped biotech target validation and due diligence consulting proposals with fixed pricing and timelines.
+keywords:
+  - biotech consulting proposal
+  - target validation quote
+  - due diligence consulting
 ---
 
 # Contact
@@ -39,6 +43,10 @@ You get a fixed price and timeline up front—no surprises.
 ## Next step
 
 A short call to align on entities and depth, then a written proposal with price and timeline.
+
+Before reaching out, you can review an [example deliverable]({% link example.md %}) and the [methodology]({% link how-its-built.md %}) used in every assessment.
+
+If helpful for internal context, include links to [operator background]({% link john-round.md %}) or a relevant [decision framework]({% link diligence-memo-framework.md %}) in your note.
 
 ## Disclaimer
 

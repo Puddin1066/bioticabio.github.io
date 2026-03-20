@@ -2,7 +2,7 @@
 title: Example
 layout: default
 nav_order: 5
-description: Example Biotica Bio deliverable — oncology target assessment
+description: Library of Biotica Bio consulting deliverables for target validation, drug strategy, and investor/scientific due diligence.
 has_children: true
 ---
 
@@ -20,3 +20,9 @@ Below is a full example of a Biotica Bio assessment: a comprehensive oncology ta
 [**Progesterone, trigeminal targets & dry eye**]({% link example/progesterone-trigeminal-dry-eye-report.md %}) — Open Targets–backed integration of progesterone (drug), trigeminal nerve–related targets, and dry eye disease.
 
 For how this was built (one query → data → narrative), see [How it's built]({{ site.baseurl }}{% link how-its-built.md %}).
+
+## Need this for your program?
+
+- **Startups:** [Startup-focused support]({% link for-startups.md %})
+- **Investors:** [Investor-focused support]({% link for-investors.md %})
+- **Scoping and proposal:** [Contact Biotica Bio]({% link contact.md %})

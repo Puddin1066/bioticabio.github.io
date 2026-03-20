@@ -74,3 +74,5 @@ The query file is in this repository at `scripts/queries/oncology-target-assessm
 - **Audit** — The methodology is transparent: data from the Platform; interpretation and narrative by Biotica Bio.
 
 For more on the Platform itself, see [The platform]({% link the-platform.md %}).
+
+If you want this workflow applied to your program, review [example deliverables]({% link example.md %}) and [request a scoped proposal]({% link contact.md %}).

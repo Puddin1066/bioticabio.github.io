@@ -47,23 +47,35 @@ We use this in practice as **pipeline prioritisation** and **competitive context
 
 ## Entities and query space
 
-The Platform's [data model](https://platform-docs.opentargets.org/getting-started) is built around five main entities. The GraphQL API lets you query by entity and then traverse to related data—so you can start from a target, a disease, or a drug and get the full linked picture.
+The Platform's [data model](https://platform-docs.opentargets.org/getting-started) is built around **five main entities**. The GraphQL API lets you query by entity and then traverse to related data—so you can start from a target, a disease, or a drug and get the full linked picture.
 
 | Entity | What it is | Query entry (example) | What you can ask for from it |
 |--------|------------|------------------------|------------------------------|
 | **Target** | Candidate drug-binding molecule (e.g. gene/product) | `target(ensemblId: "ENSG00000139618")` | Pathways, GO, hallmarks, tractability, **associatedDiseases**, **knownDrugs**, evidence, prioritisation, safety, expression, interactions |
 | **Disease / Phenotype** | Disease indication, phenotype, or trait (EFO/MONDO) | `disease(efoId: "EFO_0000616")` | Name, ontology; **associatedTargets**, **knownDrugs**; therapeutic area |
 | **Drug** | Molecule as medicinal product (ChEMBL) | `drug(chemblId: "CHEMBL192")` | Indications, mechanisms, targets, phases, drug type |
-| **Variant** | DNA variant associated with disease or trait | *via API* | Links to studies, traits, and targets |
-| **Study** | Source of evidence (e.g. GWAS) linking variants to traits | *via API* | Links to variants, traits, molecular phenotypes |
+| **Variant** | DNA variant associated with disease or trait | *via API* | Links to studies, traits, and targets; population frequencies, variant effect, transcript consequences |
+| **Study** | Source of evidence (e.g. GWAS, molQTL) linking variants to traits | *via API* | Links to variants, traits, molecular phenotypes; GWAS/molQTL credible sets |
 
-In practice, Biotica Bio assessments typically **start from a target** (Ensembl ID) or **from a disease** (EFO ID): one query then pulls associations, known drugs, evidence, and—when we need landscape context—related diseases and their associated targets and drugs. The same API supports target-centric, disease-centric, or drug-centric views so the query space matches how you think about the biology or the deal.
+### Which entities the pipeline uses today
+
+The **report pipeline and Open Targets provider** currently use **three** of the five entities:
+
+- **Target** — `requestTarget` (target-summary, oncology-target-assessment).
+- **Disease / Phenotype** — `requestDisease` (disease-landscape, disease-dry-eye).
+- **Drug** — `requestDrug` (drug-assessment).
+
+**Variant** and **Study** are first-class in the Platform (variant pages, GWAS/molQTL studies, credible sets, Locus-to-Gene) but are **not yet** exposed in our provider or report pipeline—no GraphQL query loaders or `requestVariant` / `requestStudy` methods. Adding them would mean new queries and section builders (e.g. genetics evidence or study-backed associations) for reports that need variant- or study-centric views.
+
+In practice, Biotica Bio assessments today **start from a target**, **disease**, or **drug**: one query then pulls associations, known drugs, evidence, and—when we need landscape context—related diseases and their associated targets and drugs. The same API supports target-centric, disease-centric, or drug-centric views so the query space matches how you think about the biology or the deal.
 
 ## Why it matters for you
 
 - **Credibility** — Every claim in a Biotica Bio report can be traced back to the Platform and its upstream sources.
 - **Reproducibility** — Same query, same API; you can re-run or audit as data updates.
 - **Speed** — One structured query replaces ad hoc literature and database diving for a first-pass assessment.
+
+To see how this evidence is translated into decisions, explore [example deliverables]({% link example.md %}) and then [contact us for scoped support]({% link contact.md %}).
 
 {: .note }
 **Powered by Open Targets. Interpretation and strategy by Biotica Bio.**

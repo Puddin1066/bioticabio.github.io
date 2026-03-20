@@ -2,13 +2,48 @@
 {% assign schema_page_title = page.title | default: site.title %}
 {% assign schema_page_description = page.description | default: site.description %}
 {% assign schema_page_image = page.image | default: site.seo.default_image %}
+{% assign schema_author_name = page.author_name %}
+{% assign schema_author_linkedin = page.author_linkedin | default: site.author.linkedin %}
+{% assign schema_author_title = page.author_title | default: site.author.title %}
+{% assign schema_page_keywords = page.keywords %}
+{% assign schema_page_about = page.about %}
+{% assign schema_date_published = page.datePublished %}
+{% assign schema_date_modified = page.dateModified | default: page.last_modified_at %}
 {% assign has_schema_default_image = false %}
 {% assign has_schema_page_image = false %}
+{% assign has_schema_keywords = false %}
+{% assign has_schema_about = false %}
+{% assign has_schema_date_published = false %}
+{% assign has_schema_date_modified = false %}
+{% assign has_schema_author_name = false %}
+{% assign has_schema_author_linkedin = false %}
+{% assign has_schema_author_title = false %}
 {% if site.seo.default_image and site.seo.default_image != "" %}
   {% assign has_schema_default_image = true %}
 {% endif %}
 {% if schema_page_image and schema_page_image != "" %}
   {% assign has_schema_page_image = true %}
+{% endif %}
+{% if schema_page_keywords %}
+  {% assign has_schema_keywords = true %}
+{% endif %}
+{% if schema_page_about %}
+  {% assign has_schema_about = true %}
+{% endif %}
+{% if schema_date_published and schema_date_published != "" %}
+  {% assign has_schema_date_published = true %}
+{% endif %}
+{% if schema_date_modified and schema_date_modified != "" %}
+  {% assign has_schema_date_modified = true %}
+{% endif %}
+{% if schema_author_name and schema_author_name != "" %}
+  {% assign has_schema_author_name = true %}
+{% endif %}
+{% if schema_author_linkedin and schema_author_linkedin != "" %}
+  {% assign has_schema_author_linkedin = true %}
+{% endif %}
+{% if schema_author_title and schema_author_title != "" %}
+  {% assign has_schema_author_title = true %}
 {% endif %}
 {% assign is_report_page = false %}
 {% if page.url contains '/example/' or page.url contains '/reports/' %}
@@ -35,6 +70,24 @@
 }
 </script>
 
+{% if has_schema_author_name %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ schema_author_name | escape }}"{% if has_schema_author_title %},
+  "jobTitle": "{{ schema_author_title | escape }}"{% endif %},
+  "url": "{{ '/john-round.html' | absolute_url }}",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "{{ site.social.name | default: site.title | escape }}",
+    "url": "{{ site.url }}"
+  }{% if has_schema_author_linkedin %},
+  "sameAs": ["{{ schema_author_linkedin | escape }}"]{% endif %}
+}
+</script>
+{% endif %}
+
 {% if is_report_page %}
 <script type="application/ld+json">
 {
@@ -53,6 +106,14 @@
     "name": "{{ site.social.name | default: site.title | escape }}"
   }{% if has_schema_page_image %},
   "image": "{{ schema_page_image | absolute_url }}"{% endif %}
+  {% if has_schema_date_published %},
+  "datePublished": "{{ schema_date_published }}"{% endif %}
+  {% if has_schema_date_modified %},
+  "dateModified": "{{ schema_date_modified }}"{% endif %}
+  {% if has_schema_keywords %},
+  "keywords": {{ schema_page_keywords | jsonify }}{% endif %}
+  {% if has_schema_about %},
+  "about": {{ schema_page_about | jsonify }}{% endif %}
 }
 </script>
 {% endif %}

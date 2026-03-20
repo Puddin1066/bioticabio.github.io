@@ -14,6 +14,8 @@ plugins:
 author:
   name: Biotica Bio
   url: https://bioticabio.com
+  title: Biotech Strategist
+  linkedin: https://www.linkedin.com/in/john-round-475b764/
 
 twitter:
   username: bioticabio
@@ -23,6 +25,7 @@ social:
   name: Biotica Bio
   links:
     - https://bioticabio.com
+    - https://www.linkedin.com/in/john-round-475b764/
 
 seo:
   type: WebSite

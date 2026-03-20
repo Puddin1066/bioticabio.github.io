@@ -4,6 +4,20 @@ layout: default
 parent: Example
 nav_order: 1
 description: Full BRCA2 oncology target assessment — Biotica Bio example deliverable
+image: /assets/images/og-default.png
+keywords:
+  - BRCA2 target assessment
+  - oncology target validation
+  - biotech diligence example
+datePublished: 2026-03-01
+dateModified: 2026-03-20
+author_name: John Round
+author_title: Biotech Strategist
+author_linkedin: https://www.linkedin.com/in/john-round-475b764/
+about:
+  - BRCA2
+  - ENSG00000139618
+  - breast cancer
 ---
 
 # BRCA2: Executive Oncology Target Assessment
@@ -17,6 +31,23 @@ This assessment is for strategic and due-diligence use only; it does not constit
 For how this report was produced (one GraphQL query → data → narrative), see [How it's built]({{ site.baseurl }}{% link how-its-built.md %}).
 
 *Data: Open Targets Platform. Interpretation and narrative: Biotica Bio.*
+
+---
+
+## Executive memo snapshot
+
+- **Decision focus:** BRCA2 opportunity is strongest through pathway/biomarker strategy, not direct binding.
+- **Upside:** Strong biology and mature evidence base support investor and partner narratives.
+- **Primary risk:** Crowded indication landscape requires clear differentiation strategy.
+- **Near-term action:** Prioritise biomarker-led and combination-positioned development paths.
+
+## Operator capabilities demonstrated
+
+- Converts complex target biology into decision-ready strategy.
+- Frames downside risk and competitive constraints explicitly.
+- Links evidence provenance to practical R&D and commercial actions.
+
+*Perspective: John Round, Biotica Bio.*
 
 ---
 

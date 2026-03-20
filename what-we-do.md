@@ -2,7 +2,11 @@
 title: What we do
 layout: default
 nav_order: 2
-description: Biotica Bio services for startups and investors
+description: Biotica Bio consulting services for biotech target validation, investor due diligence, and pipeline prioritisation.
+keywords:
+  - biotech consulting services
+  - target validation consulting
+  - investor due diligence biotech
 ---
 
 # What we do
@@ -20,6 +24,24 @@ Biotica Bio delivers evidence-based target and strategy support for life science
 ## Engagement
 
 All engagements are **scoped and confidential**. We do not invest, so there is no conflict of interest.
+
+## Typical deliverable format
+
+- **Executive brief (5-10 pages)** for decision makers.
+- **Full evidence report** with methodology, assumptions, and strategic implications.
+- **Follow-up Q&A session** to align investment, R&D, or BD next steps.
+
+## Typical timeline
+
+- **Scoping call:** 30-45 minutes.
+- **Proposal:** 1-2 business days after scoping.
+- **Delivery:** Usually 5-10 business days depending on entities and depth.
+
+[For startup-specific use cases →]({% link for-startups.md %})  
+[For investor-specific diligence workflows →]({% link for-investors.md %})  
+[See example deliverables →]({% link example.md %})  
+[Operator background and strategic lens →]({% link john-round.md %})  
+[Request a scoped proposal →]({% link contact.md %})
 
 {: .warning }
 Our assessments are for strategic and due-diligence use only; they do not constitute regulatory, medical, or investment advice.

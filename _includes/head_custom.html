@@ -3,6 +3,10 @@
 {% assign page_url = page.url | replace:'index.html','' | absolute_url %}
 {% assign page_image = page.image | default: site.seo.default_image %}
 {% assign page_robots = page.robots | default: 'index,follow' %}
+{% assign og_type = 'website' %}
+{% if page.url contains '/example/' or page.url contains '/reports/' %}
+  {% assign og_type = 'article' %}
+{% endif %}
 {% assign has_page_image = false %}
 {% if page_image and page_image != "" %}
   {% assign has_page_image = true %}
@@ -15,7 +19,7 @@
 <meta property="og:title" content="{{ page_title | escape }}">
 <meta property="og:description" content="{{ page_description | escape }}">
 <meta property="og:url" content="{{ page_url }}">
-<meta property="og:type" content="website">
+<meta property="og:type" content="{{ og_type }}">
 {% if has_page_image %}
 <meta property="og:image" content="{{ page_image | absolute_url }}">
 {% endif %}

@@ -4,6 +4,19 @@ layout: default
 parent: Example
 nav_order: 4
 description: Open Targets–backed evaluation of progesterone, trigeminal nerve targets, and dry eye disease — Biotica Bio example report
+image: /assets/images/og-default.png
+keywords:
+  - dry eye target assessment
+  - trigeminal pathway targets
+  - progesterone strategy report
+datePublished: 2026-03-01
+dateModified: 2026-03-20
+about:
+  - Progesterone
+  - TRPV1
+  - TRPM8
+  - SCN9A
+  - dry eye disease
 ---
 
 # Progesterone, trigeminal nerve targets, and dry eye disease

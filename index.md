@@ -1,8 +1,12 @@
 ---
-title: Biotica Bio — Evidence-led target assessment for startups and investors
+title: Biotech target validation consulting for startups and investors
 layout: home
 nav_order: 1
-description: Evidence-led target assessment for startups and investors. Powered by Open Targets. Interpretation by Biotica Bio.
+description: Biotica Bio provides biotech target validation consulting and due diligence support for startups and investors, powered by Open Targets evidence.
+keywords:
+  - biotech target validation consulting
+  - biotech due diligence
+  - Open Targets consulting
 ---
 
 # Evidence-led target assessment for startups and investors
@@ -15,11 +19,17 @@ Biotica Bio turns the same public evidence that big pharma uses into **clear, re
 
 {: .note }
 **For startups:** Investor-ready target narratives, partner and BD discussions, and pipeline prioritisation—without guessing.
+[See startup-focused support →]({% link for-startups.md %})
 
 {: .note }
 **For investors:** Evidence-led due diligence on targets and pipelines, portfolio monitoring, and screening in new therapeutic areas. Same data, synthesised for deal speed.
+[See investor-focused support →]({% link for-investors.md %})
 
 [**See an example assessment**]({% link example/brca2-report.md %}) — Our full BRCA2 oncology target report shows what you get: biology, disease associations, druggability, safety, and strategic synthesis.
+
+[**Explore all example deliverables**]({% link example.md %}) or [**request a scoped proposal**]({% link contact.md %}).
+
+For background on strategic approach and operator perspective, see [John Round]({% link john-round.md %}) and [Decision frameworks]({% link biotech-target-decision-framework.md %}).
 
 ---
 
