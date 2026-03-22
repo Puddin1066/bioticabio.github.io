@@ -200,7 +200,8 @@ async function getAuthedClient(credentialsPath, tokenPath) {
 
 async function main() {
   const args = parseArgs();
-  const siteUrl = args.site || "sc-domain:bioticabio.com";
+  /** URL-prefix property; use `npm run gsc:list-sites` for exact strings. Domain property: sc-domain:example.com */
+  const siteUrl = args.site || "https://bioticabio.com/";
   const credentialsPath = args.credentials || path.resolve(".secrets/credentials.json");
   const tokenPath = args.token || path.resolve(".secrets/gsc-token.json");
   const days = Number(args.days || 28);

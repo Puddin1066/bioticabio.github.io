@@ -224,7 +224,7 @@ node fetch-progesterone-trigeminal-dry-eye.js && node generate-progesterone-trig
 From repository root, run the Search Console helper to pull top queries and top pages:
 
 ```bash
-npm run gsc:top-queries -- --site "sc-domain:bioticabio.com" --days 28 --rows 50
+npm run gsc:top-queries -- --site "https://bioticabio.com/" --days 28 --rows 50
 ```
 
 For URL-prefix properties:
@@ -251,6 +251,12 @@ Generate a monthly artifact pair (JSON + Markdown) under `docs/seo/metrics/`:
 
 ```bash
 npm run seo:monthly
+```
+
+Default site is `https://bioticabio.com/` (URL-prefix property). Override:
+
+```bash
+GSC_SITE="sc-domain:bioticabio.com" npm run seo:monthly
 ```
 
 This creates:

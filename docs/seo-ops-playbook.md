@@ -7,20 +7,30 @@ Use this loop weekly to convert Search Console data into measurable growth.
 From repository root:
 
 ```bash
+npm run gsc:top-queries -- --site "https://bioticabio.com/" --days 28 --rows 50
+```
+
+If your property is **domain** (not URL-prefix), use:
+
+```bash
 npm run gsc:top-queries -- --site "sc-domain:bioticabio.com" --days 28 --rows 50
 ```
 
-If your property is URL-prefix:
-
-```bash
-npm run gsc:top-queries -- --site "https://bioticabio.com/" --days 28 --rows 50
-```
+Run `npm run gsc:list-sites` to see exact `siteUrl` values for your OAuth user.
 
 Track:
 
 - top queries
 - top pages
 - clicks, impressions, CTR, average position
+
+For monthly persistence (recommended):
+
+```bash
+npm run seo:monthly
+```
+
+This writes a dated snapshot to `docs/seo/metrics/` for trend tracking and review.
 
 ## 2) Prioritize fixes
 
