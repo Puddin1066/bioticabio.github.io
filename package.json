@@ -6,7 +6,8 @@
     "deploy:prod": "vercel --prod",
     "gsc:top-queries": "node scripts/gsc-top-queries.mjs",
     "gsc:list-sites": "node scripts/gsc-top-queries.mjs --list-sites",
-    "seo:monthly": "node scripts/gsc-monthly-report.mjs"
+    "seo:monthly": "node scripts/gsc-monthly-report.mjs",
+    "seo:monthly:gemflush": "GSC_SITE=sc-domain:gemflush.com GSC_METRICS_SUFFIX=-gemflush node scripts/gsc-monthly-report.mjs"
   },
   "devDependencies": {
     "vercel": "^39.0.0"

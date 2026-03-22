@@ -259,6 +259,18 @@ Default site is `https://bioticabio.com/` (URL-prefix property). Override:
 GSC_SITE="sc-domain:bioticabio.com" npm run seo:monthly
 ```
 
+**Gemflush** (domain property; writes `docs/seo/metrics/gsc-gemflush-YYYY-MM.*` so it does not overwrite Biotica):
+
+```bash
+npm run seo:monthly:gemflush
+```
+
+Or manually:
+
+```bash
+GSC_SITE="sc-domain:gemflush.com" GSC_METRICS_SUFFIX="-gemflush" npm run seo:monthly
+```
+
 This creates:
 
 - `docs/seo/metrics/gsc-YYYY-MM.json`

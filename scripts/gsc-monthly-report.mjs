@@ -12,8 +12,10 @@ function main() {
   const stamp = monthStamp();
   const root = process.cwd();
   const outDir = path.join(root, "docs", "seo", "metrics");
-  const jsonPath = path.join(outDir, `gsc-${stamp}.json`);
-  const mdPath = path.join(outDir, `gsc-${stamp}.md`);
+  /** e.g. `-gemflush` so a second property in the same month does not overwrite Biotica files */
+  const suffix = process.env.GSC_METRICS_SUFFIX || "";
+  const jsonPath = path.join(outDir, `gsc${suffix}-${stamp}.json`);
+  const mdPath = path.join(outDir, `gsc${suffix}-${stamp}.md`);
   const site = process.env.GSC_SITE || DEFAULT_GSC_SITE;
 
   const args = [
